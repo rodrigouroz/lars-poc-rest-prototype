@@ -1,1 +1,1 @@
-# lars-poc-rest-prototype
+# lars_poc-rest-prototype

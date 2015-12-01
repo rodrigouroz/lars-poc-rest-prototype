@@ -1,0 +1,5 @@
+CREATE USER lars_poc WITH PASSWORD 'lars_poc';
+GRANT ALL PRIVILEGES ON SCHEMA lars_poc TO lars_poc;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA lars_poc TO lars_poc;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA lars_poc TO lars_poc;
+ALTER USER lars_poc SET search_path = lars_poc;

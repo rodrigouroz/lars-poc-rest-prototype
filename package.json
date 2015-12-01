@@ -1,0 +1,39 @@
+{
+  "name": "lars_poc-rest-prototype",
+  "version": "0.1.0",
+  "description": "A prototype backend for the LARS PoC",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "createdb": "./createdb.sh",
+    "lint": "eslint server.js lib resources test",
+    "dev": "nodemon --debug --watch lib --watch resources --watch server.js server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigouroz/lars_poc-rest-prototype.git"
+  },
+  "keywords": [
+    "lars",
+    "poc",
+    "rest",
+    "sri4node"
+  ],
+  "author": "Rodrigo Uroz <rodrigoruroz@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rodrigouroz/lars_poc-rest-prototype/issues"
+  },
+  "homepage": "https://github.com/rodrigouroz/lars_poc-rest-prototype#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "pg": "^4.4.3",
+    "q": "^1.4.1",
+    "sri4node": "^1.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.2",
+    "mocha": "^2.3.4"
+  }
+}
