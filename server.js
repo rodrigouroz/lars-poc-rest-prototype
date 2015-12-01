@@ -12,6 +12,27 @@ var $u = sri4node.utils;
 var verbose = false;
 var databaseUrl = config.DATABASE_URL;
 
+var handleCorsHeaders = function (req, res, next) {
+  'use strict';
+  if (req.get('Origin') !== null) {
+    res.header('Access-Control-Allow-Origin', req.get('Origin'));
+    res.header('Access-Control-Allow-Credentials', 'true');
+    if (req.get('Access-Control-Request-Methods')) {
+      res.header('Access-Control-Allow-Methods', req.get('Access-Control-Request-Methods'));
+    }
+    if (req.get('Access-Control-Request-Headers')) {
+      res.header('Access-Control-Allow-Headers', req.get('Access-Control-Request-Headers'));
+    }
+  }
+  if (req.method === 'OPTIONS') {
+    res.status(200).send();
+  } else {
+    next();
+  }
+};
+
+app.use(handleCorsHeaders);
+
 sri4node.configure(app, pg, {
   logrequests: true,
   logsql: verbose,
