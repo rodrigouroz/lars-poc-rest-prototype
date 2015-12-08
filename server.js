@@ -17,15 +17,17 @@ var handleCorsHeaders = function (req, res, next) {
   if (req.get('Origin') !== null) {
     res.header('Access-Control-Allow-Origin', req.get('Origin'));
     res.header('Access-Control-Allow-Credentials', 'true');
-    if (req.get('Access-Control-Request-Methods')) {
-      res.header('Access-Control-Allow-Methods', req.get('Access-Control-Request-Methods'));
+    if (req.get('Access-Control-Request-Method')) {
+      res.header('Access-Control-Allow-Method', req.get('Access-Control-Request-Method'));
     }
     if (req.get('Access-Control-Request-Headers')) {
       res.header('Access-Control-Allow-Headers', req.get('Access-Control-Request-Headers'));
     }
-  }
-  if (req.method === 'OPTIONS') {
-    res.status(200).send();
+    if (req.method === 'OPTIONS') {
+      res.status(200).send();
+    } else {
+      next();
+    }
   } else {
     next();
   }
