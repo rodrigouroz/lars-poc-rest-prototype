@@ -33,7 +33,7 @@ exports = module.exports = function (roa) {
               description: 'Date of birth'
             }
           },
-          required: ['key', 'registrationNumber']
+          required: ['key', 'registrationnumber']
         },
         validate: [],
         query: {
