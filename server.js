@@ -18,7 +18,7 @@ var handleCorsHeaders = function (req, res, next) {
     res.header('Access-Control-Allow-Origin', req.get('Origin'));
     res.header('Access-Control-Allow-Credentials', 'true');
     if (req.get('Access-Control-Request-Method')) {
-      res.header('Access-Control-Allow-Method', req.get('Access-Control-Request-Method'));
+      res.header('Access-Control-Allow-Methods', req.get('Access-Control-Request-Method'));
     }
     if (req.get('Access-Control-Request-Headers')) {
       res.header('Access-Control-Allow-Headers', req.get('Access-Control-Request-Headers'));
